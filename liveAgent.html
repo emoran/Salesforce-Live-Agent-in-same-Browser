@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>How to create chatbox using jQuery UI</title>
+	<!--jQuery UI CSS-->
+	<link rel="stylesheet" href="assets/jquery-ui.css" type="text/css" media="screen" />
+	<!--jQuery and jQuery UI with jQuery Chat-->
+    <script type="text/javascript" src="assets/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="assets/jquery-ui.js"></script>
+    <link type="text/css" href="assets/jquery.ui.chatbox.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/jquery.ui.chatbox.js"></script>
+	<script type='text/javascript' src='https://c.la2c1.salesforceliveagent.com/content/g/js/29.0/deployment.js'></script>
+	<script type='text/javascript'>
+		liveagent.init('https://d.la2c1.salesforceliveagent.com/chat', '572i0000000FBlh', '00Di0000000g0SL'); //Here you need to change the url with the corrects ID's
+	</script>
+    <script type="text/javascript">
+		/*
+			document ready.
+		*/
+		$(document).ready(function()
+		{
+			/*
+				declare gloabl box variable,
+				so we can check if box is alreay open,
+				when user click toggle button
+			*/
+			var box = null;
+			
+			/*
+				we are now adding click hanlder for 
+				toggle button.
+			*/
+			
+			$("input[type='button']").click(function(event, ui)
+			{
+				/*
+					now if box is not null,
+					we are toggling chat box.
+				*/
+				if(box)
+				{
+					/*
+						below code will hide the chatbox that 
+						is active, when first clicked on toggle button
+					*/
+					box.chatbox("option", "boxManager").toggleBox();
+					liveagent.startChat('573i0000000FE4g');
+				}	
+				else
+				{
+					$('#liveAgentChat').attr('src','https://2iuq6.la2c1.salesforceliveagent.com/content/s/chat?language=es#deployment_id=572i0000000FBlh&org_id=00Di0000000g0SL&button_id=573i0000000FE4g&session_id=9dc885db-a138-4214-a731-f02d83aa9a12'); //Here you need to change the url with the corrects ID's
+					/*
+						if box variable is null then we will create
+						chat-box.
+					*/
+					box = $("#chat_div").chatbox(
+					{
+						/*
+							unique id for chat box
+						*/
+						id:"Runnable",
+                        user:
+						{
+							key : "value"
+						},
+						/*
+							Title for the chat box
+						*/
+						title : "Bienvenido a ELPRO",
+						
+					});
+				}
+			});
+		});
+    </script>
+</head>
+	<body>
+		<p>It will not work untill necessary scripts and stylesheets are properly loaded, check out the code.</p>
+		<input type="button" name="toggle"/>
+		
+		<!--Chat box will be generated in this container-->
+
+		<div id="chat_div">			
+			<iframe id='liveAgentChat' height="250px;" />
+		</div>
+
+	</body>
+</html>
