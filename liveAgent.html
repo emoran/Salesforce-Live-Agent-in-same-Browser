@@ -10,7 +10,7 @@
     <script type="text/javascript" src="assets/jquery.ui.chatbox.js"></script>
 	<script type='text/javascript' src='https://c.la2c1.salesforceliveagent.com/content/g/js/29.0/deployment.js'></script>
 	<script type='text/javascript'>
-		liveagent.init('https://d.la2c1.salesforceliveagent.com/chat', '572i0000000FBlh', '00Di0000000g0SL'); //Here you need to change the url with the corrects ID's
+		liveagent.init('https://d.la2c1.salesforceliveagent.com/chat', '573i0000000FGFY', '00Di0000000g0SL'); //Here you need to change the url with the corrects ID's
 	</script>
     <script type="text/javascript">
 		/*
@@ -43,11 +43,11 @@
 						is active, when first clicked on toggle button
 					*/
 					box.chatbox("option", "boxManager").toggleBox();
-					liveagent.startChat('573i0000000FE4g');
+					liveagent.startChat('573i0000000FGFY');
 				}	
 				else
 				{
-					$('#liveAgentChat').attr('src','https://2iuq6.la2c1.salesforceliveagent.com/content/s/chat?language=es#deployment_id=572i0000000FBlh&org_id=00Di0000000g0SL&button_id=573i0000000FE4g&session_id=9dc885db-a138-4214-a731-f02d83aa9a12'); //Here you need to change the url with the corrects ID's
+					$('#liveAgentChat').attr('src','https://2iuq6.la2c1.salesforceliveagent.com/content/s/chat?language=es#deployment_id=573i0000000FGFY&org_id=00Di0000000g0SL&button_id=573i0000000FGFY&session_id=9dc885db-a138-4214-a731-f02d83aa9a12'); //Here you need to change the url with the corrects ID's
 					/*
 						if box variable is null then we will create
 						chat-box.
@@ -74,14 +74,42 @@
     </script>
 </head>
 	<body>
-		<p>It will not work untill necessary scripts and stylesheets are properly loaded, check out the code.</p>
-		<input type="button" name="toggle"/>
+		<!-- live chat button -->
+		<a id="liveagent_button_online_573i0000000FE4g" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573i0000000FGFY')">
+			<img id="liveagent_button_online_573i0000000FE4g" onclick="liveagent.startChat('573i0000000FGFY')" src="https://stock365.secure.force.com/resource/1387433580000/Onlinechat" />
+		</a>
+		<div id="liveagent_button_offline_573i0000000FE4g">
+			<img id="liveagent_button_offline_573i0000000FGFY" style="display: none; border: 0px none; " src="https://stock365.secure.force.com/resource/1387433670000/offlinechat" />
+		</div>
+		<input type="button" name="toggle" value="Estas en linea"/>
 		
 		<!--Chat box will be generated in this container-->
 
-		<div id="chat_div">			
+		<div id="chat_div" style="float: right;">			
 			<iframe id='liveAgentChat' height="250px;" />
+
 		</div>
 
+
+
 	</body>
+
+	<script type="text/javascript">
+	console.log(liveagent);
+			if (!window._laq) { window._laq = []; }
+			window._laq.push(
+				function(){
+					liveagent.showWhenOnline(
+						'573i0000000FE4g', 
+						document.getElementById('liveagent_button_online_573i0000000FE4g')
+					);
+
+					
+					liveagent.showWhenOffline(
+						'573i0000000FGFY', 
+						document.getElementById('liveagent_button_offline_573i0000000FGFY')
+					);
+				}
+			);
+		</script>
 </html>

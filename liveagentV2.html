@@ -1,0 +1,34 @@
+<html>
+    <body>
+		<!-- live chat button -->
+		<a id="liveagent_button_online_573i0000000FE4g" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573i0000000FE4g')">
+			<img id="liveagent_button_online_573i0000000FE4g" src="https://stock365.secure.force.com/resource/1387433580000/Onlinechat" />
+		</a>
+		<div id="liveagent_button_offline_573i0000000FE4g">
+			<img id="liveagent_button_offline_573i0000000FE4g" style="display: none; border: 0px none; " src="https://stock365.secure.force.com/resource/1387433670000/offlinechat" />
+		</div>
+ 
+		<script type="text/javascript">
+			if (!window._laq) { window._laq = []; }
+			window._laq.push(
+				function(){
+					liveagent.showWhenOnline(
+						'573i0000000FE4g', 
+						document.getElementById('liveagent_button_online_573i0000000FE4g')
+					);
+					liveagent.showWhenOffline(
+						'573i0000000FE4g', 
+						document.getElementById('liveagent_button_offline_573i0000000FE4g')
+					);
+				}
+			);
+		</script>
+ 
+		
+		<!-- live agent deployment -->
+		<script type='text/javascript' src='https://c.la1c1.salesforceliveagent.com/content/g/deployment.js'></script>
+		<script type='text/javascript'>
+			liveagent.init('https://d.la2c1.salesforceliveagent.com/chat', '572i0000000FCbA', '00Di0000000g0SL');
+		</script>
+	</body>
+</html>
